@@ -36,7 +36,21 @@ function start() {
 }
 
 function reset() {
-  stopWatch.innerHTML = "00:00:00:00";
+  clearInterval(timer);
+  timer = false;
+  msec = 0;
+  sec = 0;
+  min = 0;
+  hr = 0;
+
+  stopWatch.innerHTML =
+    (hr < 10 ? "0" + hr : hr) +
+    ":" +
+    (min < 10 ? "0" + min : min) +
+    ":" +
+    (sec < 10 ? "0" + sec : sec) +
+    ":" +
+    (msec < 10 ? "0" + msec : msec);
 }
 
 function pause() {
